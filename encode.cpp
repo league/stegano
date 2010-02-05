@@ -27,7 +27,7 @@ Color mergeColors(Color pub, Color priv)
   return pub;
 }
 
-int main(int argc, char** argv, char** envp)
+int main(int argc, char** argv)
 {
   InitializeMagick(*argv);
   assert(argc == 4);

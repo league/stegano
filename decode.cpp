@@ -15,7 +15,7 @@ Quantum revealDisguisedColor(Quantum q)
   return (q & 3) << 6;
 }
 
-int main(int argc, char** argv, char** envp)
+int main(int argc, char** argv)
 {
   InitializeMagick(*argv);
   assert(argc == 3);

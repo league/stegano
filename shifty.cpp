@@ -7,7 +7,7 @@ using std::cout;
 using std::string;
 using namespace Magick;
 
-int main(int argc, char** argv, char** envp)
+int main(int argc, char** argv)
 {
   InitializeMagick(*argv);
   assert(argc == 3);

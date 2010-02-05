@@ -1,5 +1,5 @@
-CXXFLAGS=-Wall `GraphicsMagick++-config --cppflags --cxxflags`
-LDFLAGS=`GraphicsMagick++-config --ldflags --libs`
+CXXFLAGS=-Wall `Magick++-config --cppflags --cxxflags`
+LDFLAGS=`Magick++-config --ldflags --libs`
 
 default: all
 
