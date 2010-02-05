@@ -34,11 +34,9 @@ int main(int argc, char** argv)
   for(unsigned x = 0; x < g.width(); x++) {
       for(unsigned y = 0; y < g.height(); y++) {
       Color c = im.pixelColor(x, y);
-      cout << (string)c << " --> ";
       c.redQuantum(revealDisguisedColor(c.redQuantum()));
       c.greenQuantum(revealDisguisedColor(c.greenQuantum()));
       c.blueQuantum(revealDisguisedColor(c.blueQuantum()));
-      cout << (string)c << '\n';
       im.pixelColor(x, y, c);
     }
   }
