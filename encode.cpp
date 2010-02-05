@@ -30,7 +30,10 @@ Color mergeColors(Color pub, Color priv)
 int main(int argc, char** argv)
 {
   InitializeMagick(*argv);
-  assert(argc == 4);
+  if(argc != 4) {
+      cout << "Usage: " << argv[0] << " public.png private.png output.png\n";
+      exit(1);
+  }
 
   const string publicPath = argv[1];
   const string privatePath = argv[2];

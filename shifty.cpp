@@ -10,7 +10,11 @@ using namespace Magick;
 int main(int argc, char** argv)
 {
   InitializeMagick(*argv);
-  assert(argc == 3);
+  if(argc != 3) {
+      cout << "Usage: " << argv[0] << " input.png out\n"
+           << "Output files will be named out0.png, out1.png, etc.\n";
+      exit(1);
+  }
 
   const string samplePath = argv[1];
   const string outputPath = argv[2];

@@ -18,7 +18,10 @@ Quantum revealDisguisedColor(Quantum q)
 int main(int argc, char** argv)
 {
   InitializeMagick(*argv);
-  assert(argc == 3);
+  if(argc != 3) {
+      cout << "Usage: " << argv[0] << " input.png output.png\n";
+      exit(1);
+  }
 
   const string samplePath = argv[1];
   const string outputPath = argv[2];
