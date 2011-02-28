@@ -7,6 +7,15 @@ using std::cout;
 using std::string;
 using namespace Magick;
 
+Quantum shiftQuantum(Quantum q)
+{
+    q = (q & 0xFF) << 1;
+#if QuantumDepth == 16
+    q = (q << 8) | q;
+#endif
+    return q;
+}
+
 int main(int argc, char** argv)
 {
   InitializeMagick(*argv);
@@ -35,9 +44,9 @@ int main(int argc, char** argv)
     for(unsigned x = 0; x < g.width(); x++) {
       for(unsigned y = 0; y < g.height(); y++) {
         Color c = im.pixelColor(x, y);
-        c.redQuantum(c.redQuantum() << 1);
-        c.greenQuantum(c.greenQuantum() << 1);
-        c.blueQuantum(c.blueQuantum() << 1);
+        c.redQuantum(shiftQuantum(c.redQuantum()));
+        c.greenQuantum(shiftQuantum(c.greenQuantum()));
+        c.blueQuantum(shiftQuantum(c.blueQuantum()));
         im.pixelColor(x, y, c);
       }
     }

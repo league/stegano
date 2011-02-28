@@ -12,11 +12,16 @@ using namespace Magick;
 Quantum mergeQuanta(Quantum pub, Quantum priv)
 {
   // reduce private color to just 2 bits
-  priv >>= 6;
+  priv = (priv & 0xFF) >> 6;
   // zero out lowest 2 bits of public color
   pub &= 0xFC;
   // merge
-  return pub | priv;
+  Quantum r = pub | priv;
+#if QuantumDepth == 16
+  // for some reason, 2-byte quanta are doubled-up, like 0x7a7a
+  r = (r << 8) | r;
+#endif
+  return r;
 }
 
 Color mergeColors(Color pub, Color priv)

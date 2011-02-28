@@ -12,7 +12,12 @@ using namespace Magick;
 Quantum revealDisguisedColor(Quantum q)
 {
   // just keep lowest 2 bits, then amplify by 2^6
-  return (q & 3) << 6;
+  Quantum r = (q & 3) << 6;
+#if QuantumDepth == 16
+  // for some reason, 2-byte quanta are doubled-up, like 0x7a7a
+  r = (r << 8) | r;
+#endif
+  return r;
 }
 
 int main(int argc, char** argv)
