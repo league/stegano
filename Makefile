@@ -1,14 +1,15 @@
 CXX=c++
 CXXFLAGS=-Wall `GraphicsMagick++-config --cppflags --cxxflags`
 LDFLAGS=`GraphicsMagick++-config --ldflags --libs`
+PROGS=decode encode shifty tweaky
 
 default: all
 
-all: decode encode shifty
+all: $(PROGS)
 
 %: %.cpp
 	$(CXX) -o $@ $< $(CXXFLAGS) $(LDFLAGS)
 
 clean:
-	$(RM) decode encode shifty
+	$(RM) $(PROGS)
 	$(RM) -r *.dSYM
