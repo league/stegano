@@ -1,7 +1,7 @@
 CXX=c++
 CXXFLAGS=-Wall `GraphicsMagick++-config --cppflags --cxxflags`
 LDFLAGS=`GraphicsMagick++-config --ldflags --libs`
-PROGS=decode encode shifty tweaky
+PROGS=decode encode shifty tweaky spy
 
 default: all
 
