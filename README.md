@@ -20,40 +20,40 @@ platforms, but I cannot support them directly.
 
 These are the programs that are available:
 
-`encode-file input.png secret.data output.png`
+`./encode-file input.png secret.data output.png`
 
 Encodes the secret data file into the two low-order bits of the input image,
 producing the output image. No guarantees if the secret data does not fit.
 
-`decode-file input.png secret.data`
+`./decode-file input.png secret.data`
 
 Extracts the two low-order bits of each channel, writing them to the secret
 data file. Note: uses the entire image, so there will be some binary data left
 over at the end if the secrets were shorter than the original image.
 
-`encode public.png private.png output.png`
+`./encode public.png private.png output.png`
 
 Embeds a private imagine within a public one, using 6 bits per channel from
 public, and 2 bits per channel from private. The result is stored in the given
 output filename.
 
-`decode input.png output.png`
+`./decode input.png output.png`
 
 Extracts the lowest two bits per channel from the input image, to form the
 output image.
 
-`tweaky N input.png out`
+`./tweaky N input.png out`
 
 Specify N = the number of bits (1-7) to tweak. The output files will be named
 out-0s.png, out-1s.png, out-rand.png, where it tweaks the lowest N bits in the
 input image.
 
-`shifty input.png out`
+`./shifty input.png out`
 
 Simulate left-shifting the channel representations, one bit at a time. The
 output files will be named out0.png, out1.png, etc.
 
-`spy X Y image1.png [image2.png ...]`
+`./spy X Y image1.png [image2.png ...]`
 
 Identify the color of the specified X,Y coordinate in each image. Prints the
 color in hexadecimal and binary.
