@@ -48,8 +48,8 @@ int main(int argc, char** argv)
     ofstream out(secretPath.c_str(), ios::binary);
     bufstate bs = { 0, 0 };
 
-    for(unsigned x = 0; x < g.width(); x++) {
-        for(unsigned y = 0; y < g.height(); y++) {
+    for(unsigned y = 0; y < g.height(); y++) {
+        for(unsigned x = 0; x < g.width(); x++) {
             Color c = im.pixelColor(x, y);
             pushTwoBits(out, bs, c.redQuantum());
             pushTwoBits(out, bs, c.greenQuantum());

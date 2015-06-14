@@ -54,14 +54,14 @@ int main(int argc, char** argv)
     ifstream in(secretPath.c_str(), ios::binary);
     bufstate bs = { 0, 0 };
 
-    for(unsigned x = 0; x < g.width(); x++) {
-        for(unsigned y = 0; y < g.height(); y++) {
+    for(unsigned y = 0; y < g.height(); y++) {
+        for(unsigned x = 0; x < g.width(); x++) {
             Color c = im.pixelColor(x, y);
             c.redQuantum(mergeNextTwoBits(in, bs, c.redQuantum()));
             c.greenQuantum(mergeNextTwoBits(in, bs, c.greenQuantum()));
             c.blueQuantum(mergeNextTwoBits(in, bs, c.blueQuantum()));
             im.pixelColor(x, y, c);
-            if(!in) goto done;
+            //if(!in) goto done;
         }
     }
 
