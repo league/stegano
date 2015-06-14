@@ -23,7 +23,9 @@ These are the programs that are available:
 `./encode-file input.png secret.data output.png`
 
 Encodes the secret data file into the two low-order bits of the input image,
-producing the output image. No guarantees if the secret data does not fit.
+producing the output image. No guarantees if the secret data does not fit. A
+small change to the code determines whether it fills any remaining bits
+randomly, or leaves them as they were.
 
 `./decode-file input.png secret.data`
 
