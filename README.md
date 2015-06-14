@@ -1,7 +1,8 @@
 # Image steganography
 
 These are C++ programs to hide and reveal data kept in low-order bits of
-lossless image files.
+lossless image files. See the video at
+<https://www.youtube.com/watch?v=-7FBPgQDX5o>
 
 ## Building
 
