@@ -14,6 +14,13 @@ On a GNU/Linux system, you can probably install the `libgraphicsmagick++1-dev`
 package, and the equivalent of `build-essential`, and then type `make` at the
 prompt.
 
+On MacOS, I recommend using [Homebrew](https://brew.sh/). Once you
+have that, these commands should work:
+
+    brew install graphicsmagick libtool
+    brew link graphicsmagick libtool
+    make
+
 I will happily include contributions of working build instructions for other
 platforms, but I cannot support them directly.
 
