@@ -70,7 +70,7 @@ int main(int argc, char** argv)
         }
     }
 
-done:
+// done:
     in.close();
     cout << "Writing " << outputPath << '\n';
     im.write(outputPath);

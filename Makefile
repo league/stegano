@@ -10,6 +10,10 @@ all: $(PROGS)
 %: %.cpp
 	$(CXX) -o $@ $< $(CXXFLAGS) $(LDFLAGS)
 
+install: $(PROGS)
+	echo INSTALLING
+	install -D -t $(PREFIX)/bin $(PROGS)
+
 clean:
 	$(RM) $(PROGS)
 	$(RM) -r *.dSYM
