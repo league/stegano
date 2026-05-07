@@ -1,5 +1,10 @@
 # Image steganography
 
+**This repository is archived on GitHub,** but it may live on at
+
+  - https://git.sr.ht/~league/stegano
+  - https://codeberg.org/league/stegano
+
 These are C++ programs to hide and reveal data kept in low-order bits of
 lossless image files. See the video at
 <https://www.youtube.com/watch?v=-7FBPgQDX5o>
@@ -67,4 +72,3 @@ output files will be named out0.png, out1.png, etc.
 
 Identify the color of the specified X,Y coordinate in each image. Prints the
 color in hexadecimal and binary.
-
